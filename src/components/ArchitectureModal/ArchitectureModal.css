@@ -1,0 +1,196 @@
+.architecture-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+
+  padding: 2rem 1.5rem;
+
+  overflow-y: auto;
+
+  background: rgba(0, 0, 0, 0.7);
+
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.architecture-modal {
+  position: relative;
+
+  width: min(100%, 700px);
+
+  margin: auto 0;
+
+  padding: 2.5rem;
+
+  border: 1px solid var(--border);
+  border-radius: 1.5rem;
+
+  background: var(--surface);
+  color: var(--text-primary);
+
+  box-shadow: 0 25px 80px rgba(0, 0, 0, 0.35);
+}
+
+/* Close button */
+
+.architecture-close {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+
+  width: 40px;
+  height: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+
+  border: 1px solid var(--border);
+  border-radius: 50%;
+
+  background: var(--surface);
+  color: var(--text-primary);
+
+  font-size: 1.5rem;
+  line-height: 1;
+
+  cursor: pointer;
+
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.architecture-close:hover {
+  background: var(--surface-hover);
+  border-color: var(--border-hover);
+  transform: rotate(90deg);
+}
+
+.architecture-close:focus-visible {
+  outline: 2px solid var(--text-primary);
+  outline-offset: 3px;
+}
+
+/* Content */
+
+.architecture-modal .typography-eyebrow {
+  margin-bottom: 1rem;
+}
+
+.architecture-description {
+  max-width: 600px;
+  margin-top: 1.5rem;
+}
+
+/* Architecture tree */
+
+.architecture-tree {
+  margin-top: 2rem;
+
+  padding: 1.5rem;
+
+  overflow-x: auto;
+
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+
+  background: var(--background);
+}
+
+.architecture-tree pre {
+  margin: 0;
+
+  color: var(--text-secondary);
+
+  font-family: monospace;
+  font-size: 0.85rem;
+  line-height: 1.7;
+}
+
+/* Architecture points */
+
+.architecture-points {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 1rem;
+
+  margin-top: 1.5rem;
+}
+
+.architecture-points div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  padding: 1rem;
+
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+
+  background: var(--surface-hover);
+}
+
+.architecture-points strong {
+  color: var(--text-primary);
+  font-size: 0.9rem;
+}
+
+.architecture-points span {
+  color: var(--text-secondary);
+  font-size: 0.8rem;
+  line-height: 1.5;
+}
+
+/* Tablet */
+
+@media (max-width: 700px) {
+  .architecture-overlay {
+    padding: 1.5rem 1rem;
+  }
+
+  .architecture-modal {
+    padding: 2rem 1.25rem;
+  }
+
+  .architecture-points {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 480px) {
+  .architecture-overlay {
+    padding: 1rem;
+  }
+
+  .architecture-modal {
+    padding: 1.5rem 1rem;
+    border-radius: 1.25rem;
+  }
+
+  .architecture-tree {
+    padding: 1rem;
+  }
+
+  .architecture-tree pre {
+    font-size: 0.75rem;
+  }
+}
+
+/* Reduced motion */
+
+@media (prefers-reduced-motion: reduce) {
+  .architecture-close {
+    transition: none;
+  }
+}

@@ -31,7 +31,7 @@ function Hero() {
         </Typography>
 
         <div className="hero-actions">
-          <Button variant="primary" href="#">
+          <Button variant="primary" href="#projects">
             {heroData.primaryButton}
           </Button>
           <Button variant="secondary" href={cv} download="Ankesh-Dutta-CV.pdf">

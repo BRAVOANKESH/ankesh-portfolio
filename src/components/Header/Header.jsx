@@ -35,7 +35,6 @@ function Header() {
           className={`header-nav ${menuOpen ? "header-nav-open" : ""}`}
           aria-label="Main navigation"
         >
-
           <a href="#skills" onClick={closeMenu}>
             Skills
           </a>
@@ -53,7 +52,13 @@ function Header() {
           </a>
         </nav>
 
-        <a href="#contact" className="header-button" onClick={closeMenu}>
+        <a
+          href="https://wa.me/YOUR_NUMBER?text=Hi%20Ankesh%2C%20I%20came%20across%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20frontend%20development%20opportunity."
+          target="_blank"
+          rel="noreferrer"
+          className="header-button"
+          onClick={closeMenu}
+        >
           Let's Talk
         </a>
 

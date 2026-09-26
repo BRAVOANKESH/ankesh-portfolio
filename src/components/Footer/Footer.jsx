@@ -1,7 +1,10 @@
 import Typography from "../../packages/ui/Typography/Typography";
 import "./Footer.css";
+import { useState } from "react";
+import ArchitectureModal from "../ArchitectureModal/ArchitectureModal";
 
 function Footer() {
+  const [architectureOpen, setArchitectureOpen] = useState(false);
   return (
     <footer className="footer" id="contact">
       <div className="footer-container">
@@ -20,14 +23,25 @@ function Footer() {
               and interesting projects.
             </Typography>
 
-            <a
-              href="https://mail.google.com/mail/?view=cm&fs=1&to=duttaankesh@gmail.com"
-              target="_blank"
-              rel="noreferrer"
-              className="footer-email"
-            >
-              duttaankesh@gmail.com ↗
-            </a>
+            <div className="footer-contact-links">
+              <a
+                href="https://mail.google.com/mail/?view=cm&fs=1&to=duttaankesh@gmail.com"
+                target="_blank"
+                rel="noreferrer"
+                className="footer-contact-link"
+              >
+                duttaankesh@gmail.com ↗
+              </a>
+
+              <a
+                href="https://wa.me/916291797947?text=Hi%20Ankesh%2C%20I%20came%20across%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20frontend%20development%20opportunity."
+                target="_blank"
+                rel="noreferrer"
+                className="footer-contact-link"
+              >
+                WhatsApp me ↗
+              </a>
+            </div>
           </div>
 
           <div className="footer-links">
@@ -50,9 +64,19 @@ function Footer() {
             © {new Date().getFullYear()} Handcrafted by Ankesh Dutta.
           </Typography>
 
-          <Typography variant="small">Built with React Js ( Monorepo Architechture )</Typography>
+          <button
+            type="button"
+            className="architecture-trigger"
+            onClick={() => setArchitectureOpen(true)}
+          >
+            Built with React Js (Monorepo Architecture)
+          </button>
         </div>
       </div>
+      <ArchitectureModal
+        isOpen={architectureOpen}
+        onClose={() => setArchitectureOpen(false)}
+      />
     </footer>
   );
 }
